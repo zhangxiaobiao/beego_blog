@@ -1,10 +1,12 @@
 package admin
 
 import (
+	"fmt"
 	"github.com/beego/beego/v2/core/logs"
 	beego "github.com/beego/beego/v2/server/web"
 	"project/models"
 	"project/models/admin"
+	"strings"
 )
 
 type LoginController struct {
@@ -13,7 +15,7 @@ type LoginController struct {
 
 //@router /login [get]
 func (this *LoginController) Login(){
-	this.Redirect("admin/login.html",302)
+	this.TplName = "admin/login.html"
 }
 
 //@router /dologin [post]
@@ -56,7 +58,7 @@ func (this *LoginController) Verify(captcha string,id string) bool  {
 	if result == nil {
 		return false
 	}
-	if result != captcha {
+	if strings.ToLower(fmt.Sprintf("%v", result)) != strings.ToLower(captcha) {
 		return false
 	}
 	this.DelSession(id)

@@ -26,3 +26,15 @@ func (this *AdminController) GetUser()  {
 	this.Data["json"] = result
 	this.ServeJSON()
 }
+
+//后台框架首页
+//@router /admin/index [get]
+func (this *AdminController) Index()  {
+	this.TplName = "admin/index.html"
+}
+
+//默认显示
+//@router /page/index
+func (this *AdminController) PageIndex()  {
+	this.TplName = "admin/page/welcome.html"
+}

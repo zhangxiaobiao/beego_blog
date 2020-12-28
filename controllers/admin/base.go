@@ -16,5 +16,7 @@ func (this *BaseController) Prepare()  {
 	if user := this.GetSession("user");user != nil{
 		this.Data["islogin"] = 1
 		this.Data["user"] = user
+	} else {
+		this.Redirect("admin/login",302)
 	}
 }

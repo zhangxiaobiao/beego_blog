@@ -9,7 +9,6 @@ import (
 
 func main() {
 	beego.BConfig.WebConfig.DirectoryIndex=true
-	beego.SetStaticPath("/admin","static/admin")
 	orm.Debug = true
 	beego.Run()
 }

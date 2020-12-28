@@ -22,6 +22,7 @@ func init() {
 	orm.RegisterDataBase("default", "mysql", fmt.Sprintf("%s",dataSource))
 
 	orm.RegisterModel(new(User))
+	orm.RegisterModel(new(SystemMenu))
 
 	orm.RunSyncdb("default",false,true)
 

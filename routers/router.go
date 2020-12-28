@@ -9,6 +9,7 @@ import (
 func init() {
     beego.Include(&admin.LoginController{})
     beego.Include(&admin.AdminController{})
+    beego.Include(&admin.IndexController{})
     beego.Include(&controllers.IndexController{})
     beego.Include(&controllers.CaptchaController{})
 }

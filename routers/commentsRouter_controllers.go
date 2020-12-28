@@ -9,8 +9,35 @@ func init() {
 
     beego.GlobalControllerRouter["project/controllers/admin:AdminController"] = append(beego.GlobalControllerRouter["project/controllers/admin:AdminController"],
         beego.ControllerComments{
+            Method: "Index",
+            Router: "/admin/index",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["project/controllers/admin:AdminController"] = append(beego.GlobalControllerRouter["project/controllers/admin:AdminController"],
+        beego.ControllerComments{
+            Method: "PageIndex",
+            Router: "/page/index",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["project/controllers/admin:AdminController"] = append(beego.GlobalControllerRouter["project/controllers/admin:AdminController"],
+        beego.ControllerComments{
             Method: "GetUser",
             Router: "/user",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["project/controllers/admin:IndexController"] = append(beego.GlobalControllerRouter["project/controllers/admin:IndexController"],
+        beego.ControllerComments{
+            Method: "SystemInit",
+            Router: "/init",
             AllowHTTPMethods: []string{"get"},
             MethodParams: param.Make(),
             Filters: nil,
